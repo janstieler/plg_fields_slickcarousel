@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<extension type="plugin" version="3.8" group="fields" method="upgrade">
+	<name>plg_fields_slickimg</name>
+	<author>Jan-Frederik Stieler</author>
+	<creationDate>05/2018</creationDate>
+	<copyright>Copyright (C) 2018 Elisa Foltyn. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>kontakt@janstieler.de</authorEmail>
+	<authorUrl>www.janstieler.de</authorUrl>
+	<version>1.0.0-alpha</version>
+	<description>PLG_FIELDS_SLICKIMG_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="slickimg">slickimg.php</filename>
+		<folder>fields</folder>
+		<folder>language</folder>
+		<folder>params</folder>
+		<folder>tmpl</folder>
+	</files>
+	<media destination="plg_fields_slickimg" folder="media">
+		<folder>js</folder>
+		<folder>css</folder>
+	</media>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_fields_slickimg.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_fields_slickimg.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="settings">
+
+                <field
+                    name="customclass"
+                    type="text"
+                    label="Customclass"
+                    desc="Slickselektor"
+                    filter="cmd"
+                    default="myslick"
+                />
+
+				<field
+					name="layouthead"
+					type="spacer"
+					label="PLG_FIELDS_SLICKIMG_LAYOUTHEAD"
+				/>
+
+                <field name="slideshowitems" type="subform"
+                    formsource="slideshowitems.xml" multiple="true"
+                    label="Slideshow items" description="Subform Field Description"
+                />
+
+                <field name="accessibility" type="radio" default="true" label="Select an option" description="Enables tabbing and arrow key navigation" class="btn-group btn-group-yesno">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+
+                <field name="adaptiveheight" type="radio" default="false" label="Select an option" description="Enables adaptive height for single slide horizontal carousels." class="btn-group btn-group-yesno">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+
+                <field name="autoplay" type="radio" default="false" label="Select an option" description="Enables Autoplay" class="btn-group btn-group-yesno">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+
+                <field
+                    name="autoplayspeed"
+                    type="text"
+                    label="autoplaySpeed"
+                    description="Autoplay Speed in milliseconds"
+                    filter="integer"
+                    default="3000"
+                />
+
+                <field name="arrows" type="radio" default="true" label="Select an option" description="Prev/Next Arrows" class="btn-group btn-group-yesno">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+
+                <field
+                    name="asnavfor"
+                    type="text"
+                    label="asNavFor"
+                    description="Set the slider to be the navigation of other slider (Class or ID Name)"
+                    default=""
+                />
+
+                <field
+                    name="appendarrows"
+                    type="text"
+                    label="appendArrows"
+                    description="Change where the navigation arrows are attached (Selector, htmlString, Array, Element, jQuery object)"
+                    default=""
+                    hint="$(element)"
+                />
+
+                <field
+                    name="appenddots"
+                    type="text"
+                    label="appendDots"
+                    description="Change where the navigation dots are attached (Selector, htmlString, Array, Element, jQuery object)"
+                    default=""
+                    hint="$(element)"
+                />
+
+                <field
+                    name="prevarrow"
+                    type="text"
+                    label="prevArrow"
+                    description="Allows you to select a node or customize the HTML for the 'Previous' arrow."
+                    default=""
+                    hint="<button type='button' class='slick-prev'>Previous</button>"
+                />
+
+                <field
+                    name="nextarrow"
+                    type="text"
+                    label="nextArrow"
+                    description="Allows you to select a node or customize the HTML for the "Next" arrow."
+                    default=""
+                    hint="<button type='button' class='slick-next'>Next</button>"
+                />
+
+                <field name="centermode" type="radio" default="false" label="Select an option" description="Enables centered view with partial prev/next slides. Use with odd numbered slidesToShow counts." class="btn-group btn-group-yesno">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+
+                <field
+                    name="centerpadding"
+                    type="text"
+                    label="centerPadding"
+                    description="Side padding when in center mode (px or %)"
+                    filter="integer"
+                    default="'50px'"
+                />
+
+                <field
+                    name="cssease"
+                    type="groupedlist"
+                    label="cssEase"
+                    default="ease"
+                    description="CSS3 Animation Easing"
+                >
+                    <option value="linear">linear</option>
+                    <option value="ease">ease</option>
+                    <option value="ease-in">ease-in</option>
+                    <option value="ease-out">ease-out</option>
+                    <option value="ease-in-out">ease-in-out</option>
+                </field>
+
+                <field name="dots" type="radio" default="false" label="Select an option" description="Show dot indicators" class="btn-group btn-group-yesno">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+
+                <field
+                    name="dotsclass"
+                    type="text"
+                    label="dotsClass"
+                    description="Class for slide indicator dots container"
+                    default="slick-dots"
+                />
+
+                <field name="draggable" type="radio" default="true" label="Select an option" description="Enable mouse dragging" class="btn-group btn-group-yesno">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+
+                <field name="fade" type="radio" default="false" label="Select an option" description="Enable fade" class="btn-group btn-group-yesno">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+
+                <field name="focusonselect" type="radio" default="false" label="Select an option" description="Enable focus on selected element (click)" class="btn-group btn-group-yesno">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+
+                <field
+                    name="edgefriction"
+                    type="text"
+                    label="edgeFriction"
+                    description="Resistance when swiping edges of non-infinite carousels"
+                    filter="integer"
+                    default="0.15"
+                />
+
+                <field name="infinite" type="radio" default="false" label="Select an option" description="Infinite loop sliding" class="btn-group btn-group-yesno">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+
+                <field
+                    name="initialslide"
+                    type="text"
+                    label="initialSlide"
+                    description="Slide to start on"
+                    filter="integer"
+                    default="0"
+                />
+
+                <field name="lazyload" type="radio" default="ondemand" label="Select an option" description="Set lazy loading technique. Accepts 'ondemand' or 'progressive'" class="btn-group btn-group-yesno">
+                    <option value="ondemand">ondemand</option>
+                    <option value="progressive">progressive</option>
+                </field>
+
+                <field name="mobilefirst" type="radio" default="false" label="Select an option" description="Responsive settings use mobile first calculation" class="btn-group btn-group-yesno">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+
+                <field name="pauseonfocus" type="radio" default="true" label="Select an option" description="Pause Autoplay On Focus" class="btn-group btn-group-yesno">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+
+                <field name="pauseonhover" type="radio" default="true" label="Select an option" description="Pause Autoplay On Hover" class="btn-group btn-group-yesno">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+
+                <field name="pauseondotshover" type="radio" default="false" label="Select an option" description="Pause Autoplay when a dot is hovered" class="btn-group btn-group-yesno">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+
+                <field
+                    name="respondto"
+                    type="groupedlist"
+                    label="respondTo"
+                    default="window"
+                    description="Width that responsive object responds to. Can be 'window', 'slider' or 'min' (the smaller of the two)"
+                >
+                    <option value="window">window</option>
+                    <option value="slider">slider</option>
+                    <option value="min">min</option>
+                </field>
+
+                <field
+                    name="responsive"
+                    type="text"
+                    label="responsive"
+                    description="Object containing breakpoints and settings objects (see demo). Enables settings sets at given screen width. Set settings to "unslick" instead of an object to disable slick at a given breakpoint."
+                    default="none"
+                />
+
+                <field
+                    name="rows"
+                    type="text"
+                    label="rows"
+                    description="Setting this to more than 1 initializes grid mode. Use slidesPerRow to set how many slides should be in each row."
+                    filter="integer"
+                    default="1"
+                />
+
+                <field
+                    name="slidestoshow"
+                    type="text"
+                    label="slidesToShow"
+                    description="of slides to show"
+                    filter="integer"
+                    default="1"
+                />
+
+                <field
+                    name="slidestoscroll"
+                    type="text"
+                    label="slidesToScroll"
+                    description="of slides to scroll"
+                    filter="integer"
+                    default="1"
+                />
+
+                <field
+                    name="speed"
+                    type="text"
+                    label="speed"
+                    description="Slide/Fade animation speed"
+                    filter="integer"
+                    default="300"
+                />
+
+                <field name="swipe" type="radio" default="true" label="Select an option" description="Enable swiping" class="btn-group btn-group-yesno">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+
+                <field name="swipetoslide" type="radio" default="false" label="Select an option" description="Allow users to drag or swipe directly to a slide irrespective of slidesToScroll" class="btn-group btn-group-yesno">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+
+                <field name="touchmove" type="radio" default="true" label="Select an option" description="Enable slide motion with touch" class="btn-group btn-group-yesno">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+
+                <field
+                    name="touchthreshold"
+                    type="text"
+                    label="touchThreshold"
+                    description="To advance slides, the user must swipe a length of (1/touchThreshold) * the width of the slider"
+                    filter="integer"
+                    default="5"
+                />
+
+                <field name="usecss" type="radio" default="true" label="Select an option" description="Enable/Disable CSS Transforms" class="btn-group btn-group-yesno">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+
+                <field name="variablewidth" type="radio" default="false" label="Select an option" description="Variable width slides" class="btn-group btn-group-yesno">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+
+                <field name="vertical" type="radio" default="false" label="Select an option" description="Vertical slide mode" class="btn-group btn-group-yesno">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+
+                <field name="verticalswiping" type="radio" default="false" label="Select an option" description="Vertical swipe mode" class="btn-group btn-group-yesno">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+
+                <field name="rtl" type="radio" default="false" label="Select an option" description="Change the slider's direction to become right-to-left" class="btn-group btn-group-yesno">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+
+                <field name="waitforanimate" type="radio" default="true" label="Select an option" description="Ignores requests to advance the slide while animating" class="btn-group btn-group-yesno">
+                    <option value="true">JYES</option>
+                    <option value="false">JNO</option>
+                </field>
+
+                <field
+                    name="zindex"
+                    type="text"
+                    label="zIndex"
+                    description="Set the zIndex values for slides, useful for IE9 and lower"
+                    filter="integer"
+                    default="1000"
+                />
+		</fields>
+	</config>
+	<!-- <updateservers>
+		<server type="extension" name="plg_fields_SLICKimg Update Site">https://raw.githubusercontent.com/coolcat-creations/plg_fields_SLICKimg/master/manifest.xml</server>
+	</updateservers> -->
+</extension>
