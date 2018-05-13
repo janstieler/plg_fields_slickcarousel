@@ -97,15 +97,15 @@
                     label="prevArrow"
                     description="Allows you to select a node or customize the HTML for the 'Previous' arrow."
                     default=""
-                    hint="<button type='button' class='slick-prev'>Previous</button>"
+                    hint=""
                 />
                 <field
                     name="nextarrow"
                     type="text"
                     label="nextArrow"
-                    description="Allows you to select a node or customize the HTML for the "Next" arrow."
+                    description="Allows you to select a node or customize the HTML for the 'Next' arrow."
                     default=""
-                    hint="<button type='button' class='slick-next'>Next</button>"
+                    hint=""
                 />
                 <field name="centermode" type="radio" default="false" label="Select an option" description="Enables centered view with partial prev/next slides. Use with odd numbered slidesToShow counts." class="btn-group btn-group-yesno">
                     <option value="true">JYES</option>
@@ -212,7 +212,7 @@
                     name="responsive"
                     type="text"
                     label="responsive"
-                    description="Object containing breakpoints and settings objects (see demo). Enables settings sets at given screen width. Set settings to "unslick" instead of an object to disable slick at a given breakpoint."
+                    description="Object containing breakpoints and settings objects (see demo). Enables settings sets at given screen width. Set settings to 'unslick' instead of an object to disable slick at a given breakpoint."
                     default="none"
                 />
                 <field
