@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <extension type="plugin" version="3.8" group="fields" method="upgrade">
-	<name>plg_fields_slickimg</name>
+	<name>plg_fields_slickcarousel</name>
 	<author>Jan-Frederik Stieler</author>
 	<creationDate>05/2018</creationDate>
-	<copyright>Copyright (C) 2018 Elisa Foltyn. All rights reserved.</copyright>
+	<copyright>Copyright (C) 2018 Kommunikationsdesign Jan-Frederik Stieler. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>kontakt@janstieler.de</authorEmail>
 	<authorUrl>www.janstieler.de</authorUrl>
 	<version>1.0.0-alpha</version>
-	<description>PLG_FIELDS_SLICKIMG_XML_DESCRIPTION</description>
+	<description>PLG_FIELDS_SLICKCAROUSEL_XML_DESCRIPTION</description>
 	<files>
-		<filename plugin="slickimg">slickimg.php</filename>
+		<filename plugin="slickcarousel">slickcarousel.php</filename>
 		<folder>fields</folder>
 		<folder>language</folder>
 		<folder>params</folder>
 		<folder>tmpl</folder>
 	</files>
-	<media destination="plg_fields_slickimg" folder="media">
+	<media destination="plg_fields_slickcarousel" folder="media">
 		<folder>js</folder>
 		<folder>css</folder>
 	</media>
@@ -345,7 +345,7 @@
                 />
 		</fields>
 	</config>
-	<!-- <updateservers>
-		<server type="extension" name="plg_fields_SLICKimg Update Site">https://raw.githubusercontent.com/coolcat-creations/plg_fields_SLICKimg/master/manifest.xml</server>
-	</updateservers> -->
+    <updateservers>
+		<server type="extension" name="plg_fields_slickcarousel Update Site">https://raw.githubusercontent.com/janstieler/plg_fields_slickcarousel/master/manifest.xml</server>
+	</updateservers>
 </extension>
